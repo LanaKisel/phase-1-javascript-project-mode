@@ -1,0 +1,61 @@
+body {
+    background-color: #0c3033;;
+}
+#gallery {
+    height: auto;
+    width: auto; 
+max-width: 600px;
+max-height: 600px;
+    display:block;
+    position: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+}
+#gallery-header {
+text-align: center;
+}
+h2 {
+font-style: italic;
+font-family:Georgia, 'Times New Roman', Times, serif;
+color: antiquewhite;
+}
+#begin {
+    background-color: antiquewhite;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.hidden {
+    display: none  
+}
+p {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: mistyrose;
+    text-align: right;
+}
+h1 {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color:tan;
+    text-align: center;
+}
+h4 {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: tan;
+    text-align: right;
+}
+a {
+    color: bisque;
+    text-align: right;
+}
+#galleryItem {
+    height: auto;
+    width: auto; 
+max-width: 500px;
+max-height: 500px;
+    display:block;
+    position: left;
+
+    margin-top: 30px;
+}
+.artDescription {
+    text-align: right;
+}
