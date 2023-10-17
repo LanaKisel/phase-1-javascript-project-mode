@@ -24,6 +24,31 @@
       "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Rembrandt_Christ_in_the_Storm_on_the_Lake_of_Galilee.jpg/800px-Rembrandt_Christ_in_the_Storm_on_the_Lake_of_Galilee.jpg",
       "wikipediaUrl": "https://en.wikipedia.org/wiki/The_Storm_on_the_Sea_of_Galilee"
 
+    },
+    {
+      "id": 4,
+      "title" : "Girl with a Pearl Earring",
+      "author": "Johannes Vermeer",
+      "description": "The painting is a tronie, the Dutch 17th-century description of a \"head\" that was not meant to be a portrait. It depicts a European girl wearing \"exotic dress\", an \"oriental turban\", and what appears to be a very large pearl as an earring. The subject of the painting is unknown, with it being possible either that she was a real model, or that Vermeer created a more generalised and mysterious woman, perhaps representing a Sibyl or biblical figure. There has been speculation that she is the artist's eldest daughter, Maria, though this has been dismissed as an anachronism by some art historians.",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/1665_Girl_with_a_Pearl_Earring.jpg/800px-1665_Girl_with_a_Pearl_Earring.jpg",
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/Girl_with_a_Pearl_Earring"
+    },
+    {
+      "id": 5,
+      "title" : "Starry Night Over the Rhône",
+      "author": "Vincent van Gogh",
+      "description": "Starry Night Over the Rhône was painted on the bank of the Rhône that was only a one or two-minute walk from the Yellow House on the Place Lamartine, which van Gogh was renting at the time. The night sky and the effects of light at night provided the subject for some of van Gogh's more famous paintings, including Café Terrace at Night (painted earlier the same month) and the June, 1889, canvas from Saint-Remy, The Starry Night.The view is from the quay on the east side of the Rhône, into the knee of the river towards the western shore: coming down from the north, the Rhône turns to the right at this point to surround the rocks on which Arles is built.",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/Starry_Night_Over_the_Rhone.jpg/1024px-Starry_Night_Over_the_Rhone.jpg",
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/Starry_Night_Over_the_Rh%C3%B4ne"
+    },
+    {
+      "id": 6,
+      "title" : "The Swing",
+      "author": "Jean-Honoré Fragonard",
+      "description": "The painting depicts an elegantly dressed young woman on a swing. A smiling young man, hiding in the bushes below and to the left, points towards her billowing dress with hat in hand. A smiling older man, who is nearly hidden in the shadows on the right, propels the swing with a pair of ropes, as a small white dog barks nearby.According to the memoirs of the dramatist Charles Collé, a courtier (homme de la cour) first asked Gabriel François Doyen to make this painting of him and his mistress. Not comfortable with this frivolous work, Doyen refused and passed on the commission to Fragonard. The man had requested a portrait of his mistress seated on a swing being pushed by a bishop, but Fragonard painted a layman. This style of \"frivolous\" painting soon became the target of the philosophers of the Enlightenment, who demanded a more serious art which would show the nobility of man",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/The_Swing_%28P430%29.jpg/800px-The_Swing_%28P430%29.jpg",
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/The_Swing_(Fragonard)"
     }
+
   ]
 }

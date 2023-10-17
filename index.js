@@ -25,8 +25,8 @@ document.addEventListener("DOMContentLoaded", () => {
         btn2.addEventListener('click', function(e){
             curIndex++;
             
-            if (curIndex>3){
-                curIndex=3;
+            if (curIndex>5){
+                curIndex=5;
             }
             updateDisplay(curIndex);
         })         
@@ -69,6 +69,8 @@ document.addEventListener("DOMContentLoaded", () => {
             document.querySelector(".input-text").value="";
             document.querySelector(".text").value="";
           })
+          document.querySelector(".holdFeedback").innerHTML="";
+          document.querySelector(".nameHolder").innerHTML="";
           document.querySelector("#artDescription").childNodes.remove;  
 
         }
