@@ -1,4 +1,25 @@
-
+function addsComment() {
+    const feedback = document.createElement('p');
+    feedback.textContent = document.querySelector(".input-text").value;
+    const feedbackName = document.createElement('p');
+    feedbackName.textContent = document.querySelector(".text").value;
+    document.querySelector(".holdFeedback").appendChild(feedback);
+    document.querySelector(".nameHolder").appendChild(feedbackName);
+    document.querySelector("#feedback").reset();
+    fetch('http://localhost:3000/comments', {
+        method: "GET",
+        headers: {
+            "Content-Type": "application/json"
+        }
+    })
+    .then(res=>{res.json})
+    .then(data=>{
+        console.log(data)
+       let comment_data=data[index].comment
+        //comment_data.filter(artwotkId)
+        console.log(comment_data)
+    })
+}
 document.addEventListener("DOMContentLoaded", () => {
 
     const beginButton = document.querySelector("#begin").addEventListener('click', () => {
@@ -35,6 +56,18 @@ document.addEventListener("DOMContentLoaded", () => {
                     updateDisplay(curIndex);
                 })
                 function updateDisplay(index) {
+                    // fetch('http://localhost:3000/comments', {
+                    //     method: "GET",
+                    //     headers: {
+                    //         "Content-Type": "application/json"
+                    //     }
+                    // })
+                    // .then(res=>{res.json})
+                    // .then(data=>{
+                    //     // let comment_data
+                    //     // comment_data.filter(artwotkId)
+                    //     // console.log()
+                    // })
                     document.querySelector("#artDescription").innerHTML = ""
                     document.querySelector("#gallery-header").classList.add("hidden");
                     let firstArt = data[index]
@@ -69,32 +102,28 @@ document.addEventListener("DOMContentLoaded", () => {
                     const form = document.querySelector('form')
                     form.addEventListener('submit', function (event) {
                         event.preventDefault();
-                        fetch('http://localhost:3000/artWork', {
+                        fetch('http://localhost:3000/comments', {
                             method: "POST",
                             headers: {
-                                "Content-Type": "application/json"
-                            }
+                                "Content-Type": "application/json",
+                                "Accept": "application/json"
+                        },
+                        body: JSON.stringify({
+                          "artworkId": data[index].id,
+                          "name": document.querySelector(".text").value,
+                          "comment": document.querySelector(".input-text").value
+                        })
                         })
                         .then(res=>res.json())
-                        .then(data =>{                                           
-                        const feedback = document.createElement('p');
-                        feedback.textContent = document.querySelector(".input-text").value;
-                        const feedbackName = document.createElement('p');
-                        feedbackName.textContent = document.querySelector(".text").value;
-                        document.querySelector(".holdFeedback").appendChild(feedback);
-                        document.querySelector(".nameHolder").appendChild(feedbackName)
-                        document.querySelector(".input-text").value = "";
-                        document.querySelector(".text").value = "";
+                        .then(data =>{                  
+                            console.log(data)   
+                            addsComment()                      
                     })
                     })
-                    document.querySelector(".holdFeedback").innerHTML = "";
-                    document.querySelector(".nameHolder").innerHTML = "";
+                    // document.querySelector(".holdFeedback").innerHTML = "";
+                    // document.querySelector(".nameHolder").innerHTML = "";
                     document.querySelector("#artDescription").childNodes.remove;
-
-
                 }
-
             })
-
     })
 })
