@@ -10,7 +10,7 @@
     },
     {
       "id": 2,
-      "title":"Tower of Babel",
+      "title": "Tower of Babel",
       "author": "Pieter Bruegel the Elder",
       "description": "The narrative of the tower of Babel is an etiology or explanation of a phenomenon. The story of the Tower of Babel explains the origins of the multiplicity of languages. God was concerned that humans had blasphemed by building the tower to avoid a second flood so God brought into existence multiple languages. Thus, humans were divided into linguistic groups, unable to understand one another.",
       "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Pieter_Bruegel_the_Elder_-_The_Tower_of_Babel_%28Vienna%29_-_Google_Art_Project_-_edited.jpg/1280px-Pieter_Bruegel_the_Elder_-_The_Tower_of_Babel_%28Vienna%29_-_Google_Art_Project_-_edited.jpg",
@@ -18,16 +18,15 @@
     },
     {
       "id": 3,
-      "title" : "The Storm on the Sea of Galilee",
+      "title": "The Storm on the Sea of Galilee",
       "author": "Rembrandt van Rijn",
       "description": "Christ in the Storm on the Sea of Galilee is a 1633 oil-on-canvas painting by the Dutch Golden Age painter Rembrandt van Rijn. It is classified as a historical painting and is among the largest and earliest of Rembrandt's works. The painting, in vertical format, shows a close-up view of Christ's disciples struggling frantically against the heavy storm to regain control of their fishing boat. A huge wave beats the bow and rips the sail. One of the disciples is seen vomiting over the side. Another one, looking directly at the viewer, is a self-portrait of the artist. Only Christ, depicted on the right, remains calm.",
       "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Rembrandt_Christ_in_the_Storm_on_the_Lake_of_Galilee.jpg/800px-Rembrandt_Christ_in_the_Storm_on_the_Lake_of_Galilee.jpg",
       "wikipediaUrl": "https://en.wikipedia.org/wiki/The_Storm_on_the_Sea_of_Galilee"
-
     },
     {
       "id": 4,
-      "title" : "Girl with a Pearl Earring",
+      "title": "Girl with a Pearl Earring",
       "author": "Johannes Vermeer",
       "description": "The painting is a tronie, the Dutch 17th-century description of a \"head\" that was not meant to be a portrait. It depicts a European girl wearing \"exotic dress\", an \"oriental turban\", and what appears to be a very large pearl as an earring. The subject of the painting is unknown, with it being possible either that she was a real model, or that Vermeer created a more generalised and mysterious woman, perhaps representing a Sibyl or biblical figure. There has been speculation that she is the artist's eldest daughter, Maria, though this has been dismissed as an anachronism by some art historians.",
       "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/1665_Girl_with_a_Pearl_Earring.jpg/800px-1665_Girl_with_a_Pearl_Earring.jpg",
@@ -35,7 +34,7 @@
     },
     {
       "id": 5,
-      "title" : "Starry Night Over the Rhône",
+      "title": "Starry Night Over the Rhône",
       "author": "Vincent van Gogh",
       "description": "Starry Night Over the Rhône was painted on the bank of the Rhône that was only a one or two-minute walk from the Yellow House on the Place Lamartine, which van Gogh was renting at the time. The night sky and the effects of light at night provided the subject for some of van Gogh's more famous paintings, including Café Terrace at Night (painted earlier the same month) and the June, 1889, canvas from Saint-Remy, The Starry Night.The view is from the quay on the east side of the Rhône, into the knee of the river towards the western shore: coming down from the north, the Rhône turns to the right at this point to surround the rocks on which Arles is built.",
       "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/Starry_Night_Over_the_Rhone.jpg/1024px-Starry_Night_Over_the_Rhone.jpg",
@@ -43,12 +42,29 @@
     },
     {
       "id": 6,
-      "title" : "The Swing",
+      "title": "The Swing",
       "author": "Jean-Honoré Fragonard",
       "description": "The painting depicts an elegantly dressed young woman on a swing. A smiling young man, hiding in the bushes below and to the left, points towards her billowing dress with hat in hand. A smiling older man, who is nearly hidden in the shadows on the right, propels the swing with a pair of ropes, as a small white dog barks nearby.According to the memoirs of the dramatist Charles Collé, a courtier (homme de la cour) first asked Gabriel François Doyen to make this painting of him and his mistress. Not comfortable with this frivolous work, Doyen refused and passed on the commission to Fragonard. The man had requested a portrait of his mistress seated on a swing being pushed by a bishop, but Fragonard painted a layman. This style of \"frivolous\" painting soon became the target of the philosophers of the Enlightenment, who demanded a more serious art which would show the nobility of man",
       "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/The_Swing_%28P430%29.jpg/800px-The_Swing_%28P430%29.jpg",
       "wikipediaUrl": "https://en.wikipedia.org/wiki/The_Swing_(Fragonard)"
+    },
+    {
+      "id": 7
+    },
+    {
+      "id": 8
+    },
+    {
+      "id": 9
+    },
+    {
+      "id": 10
+    },
+    {
+      "id": 11
+    },
+    {
+      "id": 12
     }
-
   ]
 }

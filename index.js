@@ -12,6 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
             .then(data => {
                 const btn1 = document.createElement('button');
                 btn1.textContent = "Previous art work";
+                btn1.id="btn1"
                 const btn2 = document.createElement('button');
                 btn2.textContent = "Next art piece";
                 let curIndex = 0;
@@ -68,6 +69,14 @@ document.addEventListener("DOMContentLoaded", () => {
                     const form = document.querySelector('form')
                     form.addEventListener('submit', function (event) {
                         event.preventDefault();
+                        fetch('http://localhost:3000/artWork', {
+                            method: "POST",
+                            headers: {
+                                "Content-Type": "application/json"
+                            }
+                        })
+                        .then(res=>res.json())
+                        .then(data =>{                                           
                         const feedback = document.createElement('p');
                         feedback.textContent = document.querySelector(".input-text").value;
                         const feedbackName = document.createElement('p');
@@ -77,9 +86,11 @@ document.addEventListener("DOMContentLoaded", () => {
                         document.querySelector(".input-text").value = "";
                         document.querySelector(".text").value = "";
                     })
+                    })
                     document.querySelector(".holdFeedback").innerHTML = "";
                     document.querySelector(".nameHolder").innerHTML = "";
                     document.querySelector("#artDescription").childNodes.remove;
+
 
                 }
 
