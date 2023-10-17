@@ -8,32 +8,72 @@ document.addEventListener("DOMContentLoaded", () => {
     }})
     .then(res=>res.json())
     .then(data=>{
+        const btn1 = document.createElement('button');
+        btn1.textContent="Previous art work";
+        const btn2 = document.createElement('button');
+        btn2.textContent="Next art piece";
+        let curIndex = 0;
+        updateDisplay(curIndex);
+        btn1.addEventListener("click", function(e) {
+            curIndex--;
+
+            if (curIndex<0){
+                curIndex=0;}
+                updateDisplay(curIndex);
+
+                 });
+        btn2.addEventListener('click', function(e){
+            curIndex++;
+            
+            if (curIndex>3){
+                curIndex=3;
+            }
+            updateDisplay(curIndex);
+        })         
+        function updateDisplay(index){
+        document.querySelector("#artDescription").innerHTML=""
         document.querySelector("#gallery-header").classList.add("hidden");
-        let firstArt = data[0]
+        let firstArt = data[index]
         document.querySelector('#galleryItem').src = firstArt.imageUrl 
-        document.querySelector("#artWork").classList.remove("hidden")
-        const art = document.querySelector("#artWork");
+        document.querySelector("#page_wrapper").classList.remove("hidden")
+        const artWork = document.querySelector("#artWork");
+        console.log(artWork);
+        const art = document.querySelector("#artDescription")
         console.log(art)
         let h3 = document.createElement('h1');
-        h3.classList.add("artDescription")
-        h3.textContent=data[0].title
+        h3.textContent=data[index].title
         let author = document.createElement('h4');
-        author.classList.add("artDescription")
-        author.textContent=data[0].author
+        author.textContent=data[index].author
         art.appendChild(h3);
         art.appendChild(author);
         const p = document.createElement('p');
-        p.classList.add("artDescription");
-        p.textContent = data[0].description;
+        p.textContent = data[index].description;
         art.appendChild(p);
         const a = document.createElement('a');
-        a.classList.add("artDescription")
-        a.href = data[0].wikipediaUrl;
-        a.textContent=`Wikipedia article: `+ data[0].title;
+        a.href = data[index].wikipediaUrl;
+        a.textContent=`Wikipedia article: `+ data[index].title;
         console.log(a)
         art.appendChild(a);
-    })
 
-    })
+        artWork.appendChild(btn1);
+        artWork.appendChild(btn2);
+        const form=document.querySelector('form')
+        form.addEventListener('submit', function(event){
+            event.preventDefault();
+            const feedback = document.createElement('p');
+            feedback.textContent= document.querySelector(".input-text").value;
+            const feedbackName = document.createElement('p');
+            feedbackName.textContent=document.querySelector(".text").value;
+            document.querySelector(".holdFeedback").appendChild(feedback);
+            document.querySelector(".nameHolder").appendChild(feedbackName)
+            document.querySelector(".input-text").value="";
+            document.querySelector(".text").value="";
+          })
+          document.querySelector("#artDescription").childNodes.remove;  
 
+        }
+        
+        })
+
+})
 })

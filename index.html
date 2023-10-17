@@ -12,25 +12,55 @@
     <img id="gallery"
       src="https://images.unsplash.com/photo-1606819717115-9159c900370b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
       alt="gallery" style="border:10px solid #d2cbae; padding:3px; " />
-    <div id="form">
       <div class="welcome-to-gallery">
         <h2>Welcome to Virtual Art Gallery!</h2>
         <button id="begin">Begin tour!</button>
       </div>
     </div>
   </div>
-  <div class = "page_wrapper">
-    <div class = "row">
-      <div class= "column1">
-          <div id="artWork" class="hidden">
+  <div id="page_wrapper" class="hidden">
+    <div class = "row" style="align-content: center;">
+      <div class= "column" style="text-align: right;">
+          <div id="artWork" >
            <img id="galleryItem"
              src="https://images.unsplash.com/photo-1606819717115-9159c900370b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
             alt="gallery" style="border:10px solid #d2cbae; padding:3px; " />
           </div>
       </div>
-      <div class="artDescription">
+      <div class = 'column' >
+        <div id="artDescription" class="artDescription"></div>
+        <div class="container">
+          <form id="feedback">
+            <input
+            type="text"
+            name="name"
+            value=""
+            placeholder="Leave you feedback..."
+            class="input-text"
+            />
+            <input
+            type="text"
+            name="name"
+            value=""
+            placeholder="Enter your name..."
+            class="text"
+          />
+            <input
+            type="submit"
+            placeholder="x"
+            />
+           </form>
+        </div>
+        <div id="feedbackHolder">
+          <table>
+            <tr>
+              <td class="holdFeedback"></td>
+              <td class="nameHolder"></td>
+            </tr>
+          </table>
+        </div>
       </div>    
     </div>
-   </div>   
+  </div>   
   <script type="text/javascript" src="index.js"></script>
 </body>
