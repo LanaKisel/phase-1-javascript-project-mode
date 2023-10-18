@@ -1,24 +1,33 @@
-function addsComment() {
+
+function addsComment(name, comment) {
     const feedback = document.createElement('p');
-    feedback.textContent = document.querySelector(".input-text").value;
+    feedback.textContent = comment;
     const feedbackName = document.createElement('p');
-    feedbackName.textContent = document.querySelector(".text").value;
+    feedbackName.textContent = name;
     document.querySelector(".holdFeedback").appendChild(feedback);
     document.querySelector(".nameHolder").appendChild(feedbackName);
     document.querySelector("#feedback").reset();
+}
+
+function getAllCommentsForArtWorkById(artworkId) {
+    document.querySelector(".holdFeedback").innerHTML = "";
+    document.querySelector(".nameHolder").innerHTML = "";
     fetch('http://localhost:3000/comments', {
         method: "GET",
         headers: {
             "Content-Type": "application/json"
         }
     })
-    .then(res=>{res.json})
-    .then(data=>{
-        console.log(data)
-       let comment_data=data[index].comment
-        //comment_data.filter(artwotkId)
-        console.log(comment_data)
-    })
+        .then(res => res.json())
+        .then(data => {
+            let filteredComments = data.filter((comments) => {
+                return comments.artworkId === artworkId
+            })
+            for (element of filteredComments) {
+                //console.log("this is the element : " , element)
+                addsComment(element.name, element.comment)
+            }
+        })
 }
 document.addEventListener("DOMContentLoaded", () => {
 
@@ -33,7 +42,7 @@ document.addEventListener("DOMContentLoaded", () => {
             .then(data => {
                 const btn1 = document.createElement('button');
                 btn1.textContent = "Previous art work";
-                btn1.id="btn1"
+                btn1.id = "btn1"
                 const btn2 = document.createElement('button');
                 btn2.textContent = "Next art piece";
                 let curIndex = 0;
@@ -56,18 +65,6 @@ document.addEventListener("DOMContentLoaded", () => {
                     updateDisplay(curIndex);
                 })
                 function updateDisplay(index) {
-                    // fetch('http://localhost:3000/comments', {
-                    //     method: "GET",
-                    //     headers: {
-                    //         "Content-Type": "application/json"
-                    //     }
-                    // })
-                    // .then(res=>{res.json})
-                    // .then(data=>{
-                    //     // let comment_data
-                    //     // comment_data.filter(artwotkId)
-                    //     // console.log()
-                    // })
                     document.querySelector("#artDescription").innerHTML = ""
                     document.querySelector("#gallery-header").classList.add("hidden");
                     let firstArt = data[index]
@@ -77,12 +74,12 @@ document.addEventListener("DOMContentLoaded", () => {
                     console.log(artWork);
                     const art = document.querySelector("#artDescription")
                     console.log(art)
-                    art.addEventListener('mouseover', (event)=>{
-                        event.target.style.color="orange"
+                    art.addEventListener('mouseover', (event) => {
+                        event.target.style.color = "orange"
                         setTimeout(() => {
                             event.target.style.color = "";
-                          }, 500);
-                    }, false, )
+                        }, 500);
+                    }, false,)
                     let h3 = document.createElement('h1');
                     h3.textContent = data[index].title
                     let author = document.createElement('h4');
@@ -100,6 +97,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     artWork.appendChild(btn1);
                     artWork.appendChild(btn2);
                     const form = document.querySelector('form')
+                    getAllCommentsForArtWorkById(firstArt.id);
                     form.addEventListener('submit', function (event) {
                         event.preventDefault();
                         fetch('http://localhost:3000/comments', {
@@ -107,21 +105,26 @@ document.addEventListener("DOMContentLoaded", () => {
                             headers: {
                                 "Content-Type": "application/json",
                                 "Accept": "application/json"
-                        },
-                        body: JSON.stringify({
-                          "artworkId": data[index].id,
-                          "name": document.querySelector(".text").value,
-                          "comment": document.querySelector(".input-text").value
+                            },
+                            body: JSON.stringify({
+                                "artworkId": data[index].id,
+                                "name": document.querySelector(".text").value,
+                                "comment": document.querySelector(".input-text").value
+                            })
                         })
-                        })
-                        .then(res=>res.json())
-                        .then(data =>{                  
-                            console.log(data)   
-                            addsComment()                      
+                            .then(res => res.json())
+                            .then(data => {
+                                console.log(data)
+                                const commentary = document.querySelector(".input-text").value;
+                                const personWhoComments = document.querySelector(".text").value;
+                                // const feedback = document.createElement('p');
+                                // feedback.textContent = document.querySelector(".input-text").value;
+                                // const feedbackName = document.createElement('p');
+                                // feedbackName.textContent = document.querySelector(".text").value;
+                                addsComment(personWhoComments, commentary);
+
+                            })
                     })
-                    })
-                    // document.querySelector(".holdFeedback").innerHTML = "";
-                    // document.querySelector(".nameHolder").innerHTML = "";
                     document.querySelector("#artDescription").childNodes.remove;
                 }
             })
