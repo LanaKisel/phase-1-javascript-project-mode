@@ -1,4 +1,3 @@
-
 function addsComment(name, comment) {
     const feedback = document.createElement('p');
     feedback.textContent = comment;
@@ -24,13 +23,11 @@ function getAllCommentsForArtWorkById(artworkId) {
                 return comments.artworkId === artworkId
             })
             for (element of filteredComments) {
-                //console.log("this is the element : " , element)
                 addsComment(element.name, element.comment)
             }
         })
 }
 document.addEventListener("DOMContentLoaded", () => {
-
     const beginButton = document.querySelector("#begin").addEventListener('click', () => {
         fetch('http://localhost:3000/artWork', {
             method: "GET",
@@ -117,12 +114,7 @@ document.addEventListener("DOMContentLoaded", () => {
                                 console.log(data)
                                 const commentary = document.querySelector(".input-text").value;
                                 const personWhoComments = document.querySelector(".text").value;
-                                // const feedback = document.createElement('p');
-                                // feedback.textContent = document.querySelector(".input-text").value;
-                                // const feedbackName = document.createElement('p');
-                                // feedbackName.textContent = document.querySelector(".text").value;
                                 addsComment(personWhoComments, commentary);
-
                             })
                     })
                     document.querySelector("#artDescription").childNodes.remove;
