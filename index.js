@@ -64,9 +64,6 @@ document.addEventListener("DOMContentLoaded", () => {
             })
     })
 
-
-
-
     const beginButton = document.querySelector("#begin").addEventListener('click', () => {
         fetch('http://localhost:3000/artWork', {
             method: "GET",
@@ -77,10 +74,10 @@ document.addEventListener("DOMContentLoaded", () => {
             .then(res => res.json())
             .then(data => {
                 const btn1 = document.createElement('button');
-                btn1.textContent = "Previous art work";
+                btn1.textContent = "<< Previous gallery item";
                 btn1.id = "btn1"
                 const btn2 = document.createElement('button');
-                btn2.textContent = "Next art piece";
+                btn2.textContent = "Next gallery item >>";
                 let curIndex = 0;
                 updateDisplay(curIndex);
                 btn1.addEventListener("click", function (e) {
