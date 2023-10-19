@@ -50,6 +50,23 @@
     }
   ],
   "comments": [
-   
+    {
+      "artworkId": 1,
+      "name": "",
+      "comment": "mona lisa",
+      "id": 1
+    },
+    {
+      "artworkId": 2,
+      "name": "",
+      "comment": "tower tower",
+      "id": 2
+    },
+    {
+      "artworkId": 1,
+      "name": "lia",
+      "comment": "yay",
+      "id": 3
+    }
   ]
 }
