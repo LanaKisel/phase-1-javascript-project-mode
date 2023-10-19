@@ -78,7 +78,11 @@ max-height: 500px;
 }
 button {
    margin-top: 10px;
+   background-color: antiquewhite;
+   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 #btn1 {
 margin-left: auto;
+background-color: antiquewhite;
+font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
