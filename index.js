@@ -1,5 +1,4 @@
 let currentArtworkId = undefined;
-
 function addsComment(name, comment) {
     const feedback = document.createElement('p');
     feedback.textContent = comment;
@@ -39,7 +38,6 @@ document.addEventListener("DOMContentLoaded", () => {
         }, 500);
     }, false,);
 
-
     const form = document.querySelector('form');
     form.addEventListener('submit', function (event) {
         event.preventDefault();
@@ -73,35 +71,57 @@ document.addEventListener("DOMContentLoaded", () => {
         })
             .then(res => res.json())
             .then(data => {
-                const btn1 = document.createElement('button');
-                btn1.textContent = "<< Previous gallery item";
-                btn1.id = "btn1"
-                const btn2 = document.createElement('button');
-                btn2.textContent = "Next gallery item >>";
                 let curIndex = 0;
-                updateDisplay(curIndex);
-                btn1.addEventListener("click", function (e) {
-                    curIndex--;
-                    if (curIndex < 0) {
-                        curIndex = 0;
-                    }
-                    updateDisplay(curIndex);
-                });
-                btn2.addEventListener('click', function (e) {
-                    curIndex++;
+                let btn1 = document.getElementById("btn1");
+                let btn2 = document.getElementById('btn2');
+                console.log(btn1,btn2, !btn1, !btn2);
+                
+                if (!btn1) {
+                    btn1 = document.createElement('button');
+                    btn1.textContent = "<< Previous gallery item";
+                    btn1.id = "btn1";
+                    btn1.addEventListener("click", function (e) {
+                        curIndex--;
+                        if (curIndex < 0) {
+                            curIndex = 0;
+                            document.querySelector("#gallery-header").classList.remove("hidden");
+                            document.querySelector("#page_wrapper").classList.add("hidden")
+                        } else if (curIndex = 0) {
+                            this.textContent = "Exit gallery"                          
+                           
+                        }
+                        updateDisplay(curIndex);
 
-                    if (curIndex > 5) {
-                        curIndex = 5;
-                    }
-                    updateDisplay(curIndex);
-                })
+                    });
+                }
+                if (!btn2) {
+                    btn2 = document.createElement('button');
+                    btn2.id='btn2';
+                    btn2.textContent = "Next gallery item >>";                    
+                    btn2.addEventListener('click', function (e) {
+                        curIndex++;
+
+                        if (curIndex > 5) {
+                            curIndex = 5;
+                            document.querySelector("#gallery-header").classList.remove("hidden");
+                            document.querySelector("#page_wrapper").classList.add("hidden")
+                        } else if (curIndex == 5) {
+                            this.textContent = "Exit gallery  >>";
+                        } else {
+
+                        }
+                        updateDisplay(curIndex);
+                    })
+                }
+                document.querySelector("#gallery-header").classList.add("hidden");
+                document.querySelector("#page_wrapper").classList.remove("hidden");
+                updateDisplay(curIndex);
+
                 function updateDisplay(index) {
                     currentArtworkId = data[index].id;
                     document.querySelector("#artDescription").innerHTML = ""
-                    document.querySelector("#gallery-header").classList.add("hidden");
                     let currentArtPiece = data[index]
-                    document.querySelector('#galleryItem').src = currentArtPiece.imageUrl
-                    document.querySelector("#page_wrapper").classList.remove("hidden")
+                    document.querySelector('#galleryItem').src = currentArtPiece.imageUrl;
                     const artWork = document.querySelector("#artWork");
                     console.log(artWork);
                     let h3 = document.createElement('h1');
