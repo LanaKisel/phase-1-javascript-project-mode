@@ -62,7 +62,9 @@ document.addEventListener("DOMContentLoaded", () => {
             })
     })
 
+    let curIndex = 0;
     const beginButton = document.querySelector("#begin").addEventListener('click', () => {
+        curIndex = 0;
         fetch('http://localhost:3000/artWork', {
             method: "GET",
             headers: {
@@ -71,27 +73,29 @@ document.addEventListener("DOMContentLoaded", () => {
         })
             .then(res => res.json())
             .then(data => {
-                let curIndex = 0;
+                
                 let btn1 = document.getElementById("btn1");
                 let btn2 = document.getElementById('btn2');
-                console.log(btn1,btn2, !btn1, !btn2);
+                console.log(curIndex);
+
                 
                 if (!btn1) {
                     btn1 = document.createElement('button');
                     btn1.textContent = "<< Previous gallery item";
                     btn1.id = "btn1";
                     btn1.addEventListener("click", function (e) {
+                        console.log(curIndex)
                         curIndex--;
                         if (curIndex < 0) {
                             curIndex = 0;
                             document.querySelector("#gallery-header").classList.remove("hidden");
                             document.querySelector("#page_wrapper").classList.add("hidden")
-                        } else if (curIndex = 0) {
-                            this.textContent = "Exit gallery"                          
-                           
-                        }
+                        } else if (curIndex == 0) {
+                            this.textContent = "<< Exit gallery"                          
+                           } else {
+                            btn2.textContent="Next gallery item >>"
+                           }
                         updateDisplay(curIndex);
-
                     });
                 }
                 if (!btn2) {
@@ -104,15 +108,18 @@ document.addEventListener("DOMContentLoaded", () => {
                         if (curIndex > 5) {
                             curIndex = 5;
                             document.querySelector("#gallery-header").classList.remove("hidden");
-                            document.querySelector("#page_wrapper").classList.add("hidden")
+                            document.querySelector("#page_wrapper").classList.add("hidden");
                         } else if (curIndex == 5) {
                             this.textContent = "Exit gallery  >>";
                         } else {
-
+                            btn1.textContent="<< Previous gallery item"                            
                         }
                         updateDisplay(curIndex);
                     })
                 }
+
+                btn2.textContent="Next gallery item >>"
+                btn1.textContent="Exit gallery"
                 document.querySelector("#gallery-header").classList.add("hidden");
                 document.querySelector("#page_wrapper").classList.remove("hidden");
                 updateDisplay(curIndex);
