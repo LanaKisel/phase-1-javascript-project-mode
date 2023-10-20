@@ -87,7 +87,6 @@ document.addEventListener("DOMContentLoaded", () => {
                         console.log(curIndex)
                         curIndex--;
                         if (curIndex < 0) {
-                            curIndex = 0;
                             document.querySelector("#gallery-header").classList.remove("hidden");
                             document.querySelector("#page_wrapper").classList.add("hidden")
                         } else if (curIndex == 0) {
@@ -105,11 +104,10 @@ document.addEventListener("DOMContentLoaded", () => {
                     btn2.addEventListener('click', function (e) {
                         curIndex++;
 
-                        if (curIndex > 5) {
-                            curIndex = 5;
+                        if (curIndex > data.length-1) {
                             document.querySelector("#gallery-header").classList.remove("hidden");
                             document.querySelector("#page_wrapper").classList.add("hidden");
-                        } else if (curIndex == 5) {
+                        } else if (curIndex == data.length-1) {
                             this.textContent = "Exit gallery  >>";
                         } else {
                             btn1.textContent="<< Previous gallery item"                            
