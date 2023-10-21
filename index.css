@@ -1,93 +1,129 @@
 body {
-    background-color: #0c3033;;
+    background-color: #0c3033;
+    ;
 }
 #gallery {
     height: auto;
-    width: auto; 
-max-width: 600px;
-max-height: 600px;
-    display:block;
+    width: auto;
+    max-width: 600px;
+    max-height: 600px;
+    display: block;
     position: center;
     margin-left: auto;
     margin-right: auto;
     margin-top: 30px;
 }
+
 #gallery-header {
-text-align: center;
+    text-align: center;
 }
+
 h2 {
-font-style: italic;
-font-family:Georgia, 'Times New Roman', Times, serif;
-color: antiquewhite;
+    font-style: italic;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: antiquewhite;
 }
+
 #begin {
     background-color: antiquewhite;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
+
 .hidden {
-    display: none  
+    display: none
 }
+
 p {
     font-family: Georgia, 'Times New Roman', Times, serif;
     color: mistyrose;
 
 }
+
 h1 {
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    color:tan;
+    color: tan;
 
 }
+
 h4 {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: tan;
 
 }
+
 a {
     color: bisque;
 
 }
+
 #galleryItem {
     height: auto;
-    width: auto; 
-max-width: 500px;
-max-height: 500px;
-    display:block;
+    width: auto;
+    max-width: 500px;
+    max-height: 500px;
+    display: block;
     position: right;
     margin-top: 30px;
 }
+
 .row {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    width:100%;;
+    width: 100%;
+    ;
     margin-left: 30;
 }
+
 .column {
     display: flex;
     flex-direction: column;
     flex-basis: 100%;
-    flex:1;
+    flex: 1;
 }
+
 #artWork {
     margin-left: auto;
     margin-right: 50px;
 
 }
+
 #feedback {
     padding-top: 10px;
 }
+
 button {
-   margin-top: 10px;
-   background-color: antiquewhite;
-   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin-top: 10px;
+    background-color: antiquewhite;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
+
 #btn1 {
-margin-left: auto;
-background-color: antiquewhite;
-font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin-left: auto;
+    background-color: antiquewhite;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
+
 input {
     background-color: antiquewhite;
-font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 
+}
+.table_row{
+    background-color:rgb(152, 137, 118);
+    font-family:Arial, Helvetica, sans-serif;
+    font-style: italic;
+    padding: 1px;
+    margin-top: 100px;
+}
+.table_feedback p{
+    color:rgb(153, 115, 121);
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; 
+    margin-top: 20px;
+}
+#feedbackHolder {
+    margin-top: 30px;
+}
+.table{
+    border: 3px solid rgb(167, 141, 102)
 }
