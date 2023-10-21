@@ -41,6 +41,12 @@ document.addEventListener("DOMContentLoaded", () => {
     const form = document.querySelector('form');
     form.addEventListener('submit', function (event) {
         event.preventDefault();
+        let name = document.querySelector(".text").value;
+        let comment =document.querySelector(".input-text").value;
+        console.log("name length", name.length);
+        if (name.length==0){
+            name="anonymous"
+        }
         fetch('http://localhost:3000/comments', {
             method: "POST",
             headers: {
@@ -49,16 +55,16 @@ document.addEventListener("DOMContentLoaded", () => {
             },
             body: JSON.stringify({
                 "artworkId": currentArtworkId,
-                "name": document.querySelector(".text").value,
-                "comment": document.querySelector(".input-text").value
+                "name": name,
+                "comment": comment
             })
         })
             .then(res => res.json())
             .then(data => {
                 console.log(data)
-                const commentary = document.querySelector(".input-text").value;
-                const personWhoComments = document.querySelector(".text").value;
-                addsComment(personWhoComments, commentary);
+                // const commentary = document.querySelector(".input-text").value;
+                // const personWhoComments = document.querySelector(".text").value;
+                addsComment(name, comment);
             })
     })
 
