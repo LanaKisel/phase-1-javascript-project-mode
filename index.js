@@ -20,12 +20,16 @@ function getAllCommentsForArtWorkById(artworkId) {
     })
         .then(res => res.json())
         .then(data => {
+            
             let filteredComments = data.filter((comments) => {
                 return comments.artworkId === artworkId
             })
+            filteredComments=filteredComments.splice(-5)
+
             for (element of filteredComments) {
+
                 addsComment(element.name, element.comment)
-            }
+            } 
         })
 }
 document.addEventListener("DOMContentLoaded", () => {
@@ -46,7 +50,7 @@ document.addEventListener("DOMContentLoaded", () => {
         console.log("name length", name.length);
         if (name.length==0){
             name="anonymous"
-        }
+        };        
         fetch('http://localhost:3000/comments', {
             method: "POST",
             headers: {
@@ -61,13 +65,12 @@ document.addEventListener("DOMContentLoaded", () => {
         })
             .then(res => res.json())
             .then(data => {
-                console.log(data)
-                // const commentary = document.querySelector(".input-text").value;
-                // const personWhoComments = document.querySelector(".text").value;
-                addsComment(name, comment);
+                console.log(data);
+                getAllCommentsForArtWorkById(currentArtworkId);
+                //addsComment(name, comment);
+
             })
     })
-
     let curIndex = 0;
     const beginButton = document.querySelector("#begin").addEventListener('click', () => {
         curIndex = 0;
@@ -78,13 +81,10 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         })
             .then(res => res.json())
-            .then(data => {
-                
+            .then(data => {                
                 let btn1 = document.getElementById("btn1");
                 let btn2 = document.getElementById('btn2');
-                console.log(curIndex);
-
-                
+                console.log(curIndex);              
                 if (!btn1) {
                     btn1 = document.createElement('button');
                     btn1.textContent = "<< Previous gallery item";
@@ -109,7 +109,6 @@ document.addEventListener("DOMContentLoaded", () => {
                     btn2.textContent = "Next gallery item >>";                    
                     btn2.addEventListener('click', function (e) {
                         curIndex++;
-
                         if (curIndex > data.length-1) {
                             document.querySelector("#gallery-header").classList.remove("hidden");
                             document.querySelector("#page_wrapper").classList.add("hidden");
@@ -121,13 +120,11 @@ document.addEventListener("DOMContentLoaded", () => {
                         updateDisplay(curIndex);
                     })
                 }
-
                 btn2.textContent="Next gallery item >>"
                 btn1.textContent="Exit gallery"
                 document.querySelector("#gallery-header").classList.add("hidden");
                 document.querySelector("#page_wrapper").classList.remove("hidden");
                 updateDisplay(curIndex);
-
                 function updateDisplay(index) {
                     currentArtworkId = data[index].id;
                     document.querySelector("#artDescription").innerHTML = ""
