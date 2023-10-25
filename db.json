@@ -47,170 +47,33 @@
       "description": "The painting depicts an elegantly dressed young woman on a swing. A smiling young man, hiding in the bushes below and to the left, points towards her billowing dress with hat in hand. A smiling older man, who is nearly hidden in the shadows on the right, propels the swing with a pair of ropes, as a small white dog barks nearby.According to the memoirs of the dramatist Charles Collé, a courtier (homme de la cour) first asked Gabriel François Doyen to make this painting of him and his mistress. Not comfortable with this frivolous work, Doyen refused and passed on the commission to Fragonard. The man had requested a portrait of his mistress seated on a swing being pushed by a bishop, but Fragonard painted a layman. This style of \"frivolous\" painting soon became the target of the philosophers of the Enlightenment, who demanded a more serious art which would show the nobility of man",
       "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/The_Swing_%28P430%29.jpg/800px-The_Swing_%28P430%29.jpg",
       "wikipediaUrl": "https://en.wikipedia.org/wiki/The_Swing_(Fragonard)"
+    },
+    {
+      "id": 7,
+      "title": "The Lady of Shalott",
+      "author": "John William Waterhouse",
+      "description": "The Lady of Shalott an 1888 oil-on-canvas painting, is one of John William Waterhouse's most famous works. It depicts a scene from Tennyson's poem in which the poet describes the plight and the predicament of a young woman, loosely based on the figure of Elaine of Astolat from medieval Arthurian legend, who yearned with an unrequited love for the knight Sir Lancelot, isolated under an undisclosed curse in a tower near King Arthur's Camelot.Waterhouse painted three versions of this character, in 1888, 1894 and 1915.",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/John_William_Waterhouse_-_The_Lady_of_Shalott_-_Google_Art_Project_edit.jpg/1024px-John_William_Waterhouse_-_The_Lady_of_Shalott_-_Google_Art_Project_edit.jpg",
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/The_Lady_of_Shalott_(painting)"
+    },
+    {
+      "id": 8,
+      "title": "The Battle of Alexander at Issus",
+      "author": "Albrecht Altdorfer",
+      "description": "The Battle of Alexander at Issus is a 1529 oil painting by the German artist Albrecht Altdorfer, a pioneer of landscape art and a founding member of the Danube school. The painting portrays the 333 BC Battle of Issus, in which Alexander the Great secured a decisive victory over Darius III of Persia and gained crucial leverage in his campaign against the Persian Empire. The painting is widely regarded as Altdorfer's masterpiece, and is one of the most famous examples of the type of Renaissance landscape painting known as the world landscape, which here reaches an unprecedented grandeur.",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Albrecht_Altdorfer_-_Schlacht_bei_Issus_%28Alte_Pinakothek%2C_M%C3%BCnchen%29.jpg/800px-Albrecht_Altdorfer_-_Schlacht_bei_Issus_%28Alte_Pinakothek%2C_M%C3%BCnchen%29.jpg",
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/The_Battle_of_Alexander_at_Issus"
+    },
+    {
+      "id": 9,
+      "title": "Café Terrace at Night",
+      "author": "Vincent van Gogh",
+      "description": "Van Gogh painted Café Terrace at Night in Arles, France, in mid-September 1888. The painting is not signed, but described and mentioned by the artist in three letters.Visitors to the site can stand at the north eastern corner of the Place du Forum, where the artist set up his easel.This is the first painting in which he used starry backgrounds; he went on to paint star-filled skies in Starry Night Over the Rhône (painted the same month), and the better known The Starry Night a year later. The painting is currently at the Kröller-Müller Museum in Otterlo, Netherlands",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/Vincent_van_Gogh_%281853-1890%29_Caf%C3%A9terras_bij_nacht_%28place_du_Forum%29_Kr%C3%B6ller-M%C3%BCller_Museum_Otterlo_23-8-2016_13-35-40.JPG/800px-Vincent_van_Gogh_%281853-1890%29_Caf%C3%A9terras_bij_nacht_%28place_du_Forum%29_Kr%C3%B6ller-M%C3%BCller_Museum_Otterlo_23-8-2016_13-35-40.JPG",
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/Caf%C3%A9_Terrace_at_Night"
     }
   ],
   "comments": [
-    {
-      "artworkId": 1,
-      "name": "anonymous",
-      "comment": "",
-      "id": 1
-    },
-    {
-      "artworkId": 1,
-      "name": "anonymous",
-      "comment": "",
-      "id": 2
-    },
-    {
-      "artworkId": 2,
-      "name": "anonymous",
-      "comment": "",
-      "id": 3
-    },
-    {
-      "artworkId": 2,
-      "name": "anonymous",
-      "comment": "",
-      "id": 4
-    },
-    {
-      "artworkId": 2,
-      "name": "anonymous",
-      "comment": "",
-      "id": 5
-    },
-    {
-      "artworkId": 2,
-      "name": "anonymous",
-      "comment": "",
-      "id": 6
-    },
-    {
-      "artworkId": 1,
-      "name": "anonymous",
-      "comment": "great",
-      "id": 7
-    },
-    {
-      "artworkId": 1,
-      "name": "anonymous",
-      "comment": "cool",
-      "id": 8
-    },
-    {
-      "artworkId": 1,
-      "name": "anonymous",
-      "comment": "great and cool",
-      "id": 9
-    },
-    {
-      "artworkId": 1,
-      "name": "anonymous",
-      "comment": "yay",
-      "id": 10
-    },
-    {
-      "artworkId": 1,
-      "name": "anonymous",
-      "comment": "kia",
-      "id": 11
-    },
-    {
-      "artworkId": 1,
-      "name": "anonymous",
-      "comment": "cool",
-      "id": 12
-    },
-    {
-      "artworkId": 1,
-      "name": "anonymous",
-      "comment": "mona lisa",
-      "id": 13
-    },
-    {
-      "artworkId": 1,
-      "name": "anonymous",
-      "comment": "good",
-      "id": 14
-    },
-    {
-      "artworkId": 1,
-      "name": "anonymous",
-      "comment": "great",
-      "id": 15
-    },
-    {
-      "artworkId": 1,
-      "name": "anonymous",
-      "comment": "LanaKisel",
-      "id": 16
-    },
-    {
-      "artworkId": 1,
-      "name": "anonymous",
-      "comment": "mona lisa",
-      "id": 17
-    },
-    {
-      "artworkId": 1,
-      "name": "anonymous",
-      "comment": "good",
-      "id": 18
-    },
-    {
-      "artworkId": 1,
-      "name": "anonymous",
-      "comment": "cool",
-      "id": 19
-    },
-    {
-      "artworkId": 1,
-      "name": "anonymous",
-      "comment": "cool",
-      "id": 20
-    },
-    {
-      "artworkId": 1,
-      "name": "great",
-      "comment": "cool",
-      "id": 21
-    },
-    {
-      "artworkId": 1,
-      "name": "anonymous",
-      "comment": "cool",
-      "id": 22
-    },
-    {
-      "artworkId": 1,
-      "name": "anonymous",
-      "comment": "good",
-      "id": 23
-    },
-    {
-      "artworkId": 1,
-      "name": "anonymous",
-      "comment": "mona lisa",
-      "id": 24
-    },
-    {
-      "artworkId": 1,
-      "name": "anonymous",
-      "comment": "mona lisa",
-      "id": 25
-    },
-    {
-      "artworkId": 1,
-      "name": "anonymous",
-      "comment": "mona lisa",
-      "id": 26
-    },
-    {
-      "artworkId": 1,
-      "name": "anonymous",
-      "comment": "Lana Kisel",
-      "id": 27
-    }
+   
   ]
 }

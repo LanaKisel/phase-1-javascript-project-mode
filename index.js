@@ -67,8 +67,6 @@ document.addEventListener("DOMContentLoaded", () => {
             .then(data => {
                 console.log(data);
                 getAllCommentsForArtWorkById(currentArtworkId);
-                //addsComment(name, comment);
-
             })
     })
     let curIndex = 0;
@@ -81,7 +79,7 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         })
             .then(res => res.json())
-            .then(data => {                
+            .then(data => {         
                 let btn1 = document.getElementById("btn1");
                 let btn2 = document.getElementById('btn2');
                 console.log(curIndex);              
@@ -148,7 +146,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     art.appendChild(a);
                     artWork.appendChild(btn1);
                     artWork.appendChild(btn2);
-                    getAllCommentsForArtWorkById(currentArtPiece.id);
+                    getAllCommentsForArtWorkById(currentArtworkId);
                     document.querySelector("#artDescription").childNodes.remove;
                 }
             })
