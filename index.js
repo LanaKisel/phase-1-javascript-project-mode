@@ -82,6 +82,7 @@ document.addEventListener("DOMContentLoaded", () => {
             .then(data => {         
                 let btn1 = document.getElementById("btn1");
                 let btn2 = document.getElementById('btn2');
+                let btn3 = document.getElementById("btn3");
                 console.log(curIndex);              
                 if (!btn1) {
                     btn1 = document.createElement('button');
@@ -94,11 +95,13 @@ document.addEventListener("DOMContentLoaded", () => {
                             document.querySelector("#gallery-header").classList.remove("hidden");
                             document.querySelector("#page_wrapper").classList.add("hidden")
                         } else if (curIndex == 0) {
-                            this.textContent = "<< Exit gallery"                          
+                            this.textContent = "<< Exit gallery";
+                            updateDisplay(curIndex);                          
                            } else {
-                            btn2.textContent="Next gallery item >>"
+                            btn2.textContent="Next gallery item >>";
+                            updateDisplay(curIndex);
                            }
-                        updateDisplay(curIndex);
+                       // updateDisplay(curIndex);
                     });
                 }
                 if (!btn2) {
@@ -112,18 +115,39 @@ document.addEventListener("DOMContentLoaded", () => {
                             document.querySelector("#page_wrapper").classList.add("hidden");
                         } else if (curIndex == data.length-1) {
                             this.textContent = "Exit gallery  >>";
+                            updateDisplay(curIndex);
                         } else {
-                            btn1.textContent="<< Previous gallery item"                            
+                            btn1.textContent="<< Previous gallery item";
+                            updateDisplay(curIndex);
                         }
-                        updateDisplay(curIndex);
-                    })
+                       // updateDisplay(curIndex);
+                    });
                 }
+                if (!btn3) {
+                    // if (curIndex>0 || curIndex < data.length-1) {
+                    btn3=document.createElement('button');
+                    btn3.id='btn3';
+                    btn3.textContent = 'Exit gallery';
+                    if (curIndex>0 || curIndex < data.length-1) {
+                    document.querySelector("#artWork").appendChild(btn3)
+                    btn3.addEventListener('click', function(e) {
+                        document.querySelector("#gallery-header").classList.remove("hidden");
+                        document.querySelector("#page_wrapper").classList.add("hidden");})
+     }
+                updateDisplay(curIndex);
+            }                    
+                
                 btn2.textContent="Next gallery item >>"
                 btn1.textContent="Exit gallery"
                 document.querySelector("#gallery-header").classList.add("hidden");
                 document.querySelector("#page_wrapper").classList.remove("hidden");
                 updateDisplay(curIndex);
                 function updateDisplay(index) {
+                    
+                    console.log("data", data);
+                    console.log("index", index);
+                    console.log(data[index].id);
+            
                     currentArtworkId = data[index].id;
                     document.querySelector("#artDescription").innerHTML = ""
                     let currentArtPiece = data[index]
@@ -146,6 +170,8 @@ document.addEventListener("DOMContentLoaded", () => {
                     art.appendChild(a);
                     artWork.appendChild(btn1);
                     artWork.appendChild(btn2);
+                    //artWork.appendChild(btn3);
+
                     getAllCommentsForArtWorkById(currentArtworkId);
                     document.querySelector("#artDescription").childNodes.remove;
                 }
