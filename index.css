@@ -127,3 +127,7 @@ input {
 .table{
     border: 3px solid rgb(167, 141, 102)
 }
+#like {
+    background: none;
+    border-radius: 1000px;
+}
