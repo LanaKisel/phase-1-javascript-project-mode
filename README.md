@@ -1,4 +1,4 @@
-# MProject Infortmation
+# Project Information
 ## CREATES VIRTUAL ART GALLERY
 
 In this project, you'll be able to attend a virtual art gallery. 
