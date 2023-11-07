@@ -74,6 +74,17 @@
     }
   ],
   "comments": [
-    
+    {
+      "artworkId": 2,
+      "name": "LanaKisel",
+      "comment": "great",
+      "id": 1
+    },
+    {
+      "artworkId": 2,
+      "name": "anonymous",
+      "comment": "cool",
+      "id": 2
+    }
   ]
 }
