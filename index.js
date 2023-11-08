@@ -1,4 +1,46 @@
 let currentArtworkId = undefined;
+let allArtworks = [];
+function updateDisplay(index) {
+    let likes = document.querySelector('#likeCount');
+    const art = document.querySelector("#artDescription"); 
+    let btn1 = document.getElementById("btn1");
+    let btn2 = document.getElementById('btn2');
+    let btn3 = document.getElementById("btn3");
+    console.log("data", allArtworks);
+    console.log("index", index);
+    console.log(allArtworks[index].id);
+    console.log("thes are likes: ", allArtworks[index].likes)
+
+    currentArtworkId = allArtworks[index].id;
+    document.querySelector("#artDescription").innerHTML = ""
+    let currentArtPiece = allArtworks[index]
+    document.querySelector('#galleryItem').src = currentArtPiece.imageUrl;
+    const artWork = document.querySelector("#artWork");
+    console.log(artWork);
+    let h3 = document.createElement('h1');
+    h3.textContent = currentArtPiece.title
+    let author = document.createElement('h4');
+    author.textContent = currentArtPiece.author
+    art.appendChild(h3);
+    art.appendChild(author);
+    const p = document.createElement('p');
+    p.textContent = currentArtPiece.description;
+    art.appendChild(p);
+    const a = document.createElement('a');
+    a.href = currentArtPiece.wikipediaUrl;
+    a.textContent = `Wikipedia article: ` + currentArtPiece.title;
+    console.log(a)
+    art.appendChild(a);
+   
+    getAllCommentsForArtWorkById(currentArtworkId);
+    document.querySelector("#artDescription").childNodes.remove;
+    //let likes = document.querySelector('#likeCounts');
+    if (allArtworks[index].likes == undefined) {
+        likes.textContent = 0
+    } else {
+        likes.textContent = allArtworks[index].likes
+    }
+}
 function addsComment(name, comment) {
     const feedback = document.createElement('p');
     feedback.textContent = comment;
@@ -61,8 +103,7 @@ document.addEventListener("DOMContentLoaded", () => {
             body: JSON.stringify({
                 "artworkId": currentArtworkId,
                 "name": name,
-                "comment": comment,
-                "likes": 0
+                "comment": comment                
             })
         })
             .then(res => res.json())
@@ -83,7 +124,7 @@ document.addEventListener("DOMContentLoaded", () => {
         })
             .then(res => res.json())
             .then(data => {
-
+                allArtworks = data;
                 let btn1 = document.getElementById("btn1");
                 let btn2 = document.getElementById('btn2');
                 let btn3 = document.getElementById("btn3");
@@ -142,51 +183,56 @@ document.addEventListener("DOMContentLoaded", () => {
                     })
 
                 }
+
+                const artWork = document.querySelector("#artWork");
+                artWork.appendChild(btn3);
+                artWork.appendChild(btn1);
+                artWork.appendChild(btn2);
+
                 btn2.textContent = "Next gallery item >>"
                 btn1.textContent = "Exit gallery"
                 document.querySelector("#gallery-header").classList.add("hidden");
                 document.querySelector("#page_wrapper").classList.remove("hidden");
                 updateDisplay(curIndex);
                 indexUpdated(data.length);
-                function updateDisplay(index) {
+                // function updateDisplay(index) {
+                //     console.log("data", allArtworks);
+                //     console.log("index", index);
+                //     console.log(allArtworks[index].id);
+                //     console.log("thes are likes: ", allArtworks[index].likes)
 
-                    console.log("data", data);
-                    console.log("index", index);
-                    console.log(data[index].id);
-                    console.log("thes are likes: ", data[index].likes)
-
-                    currentArtworkId = data[index].id;
-                    document.querySelector("#artDescription").innerHTML = ""
-                    let currentArtPiece = data[index]
-                    document.querySelector('#galleryItem').src = currentArtPiece.imageUrl;
-                    const artWork = document.querySelector("#artWork");
-                    console.log(artWork);
-                    let h3 = document.createElement('h1');
-                    h3.textContent = currentArtPiece.title
-                    let author = document.createElement('h4');
-                    author.textContent = currentArtPiece.author
-                    art.appendChild(h3);
-                    art.appendChild(author);
-                    const p = document.createElement('p');
-                    p.textContent = currentArtPiece.description;
-                    art.appendChild(p);
-                    const a = document.createElement('a');
-                    a.href = currentArtPiece.wikipediaUrl;
-                    a.textContent = `Wikipedia article: ` + currentArtPiece.title;
-                    console.log(a)
-                    art.appendChild(a);
-                    artWork.appendChild(btn3);
-                    artWork.appendChild(btn1);
-                    artWork.appendChild(btn2);
-                    getAllCommentsForArtWorkById(currentArtworkId);
-                    document.querySelector("#artDescription").childNodes.remove;
-                    //let likes = document.querySelector('#likeCounts');
-                    if( data[index].likes==undefined) {
-                        likes.textContent=0
-                    } else {
-                    likes.textContent=data[index].likes
-                }
-                }
+                //     currentArtworkId = allArtworks[index].id;
+                //     document.querySelector("#artDescription").innerHTML = ""
+                //     let currentArtPiece = allArtworks[index]
+                //     document.querySelector('#galleryItem').src = currentArtPiece.imageUrl;
+                //     const artWork = document.querySelector("#artWork");
+                //     console.log(artWork);
+                //     let h3 = document.createElement('h1');
+                //     h3.textContent = currentArtPiece.title
+                //     let author = document.createElement('h4');
+                //     author.textContent = currentArtPiece.author
+                //     art.appendChild(h3);
+                //     art.appendChild(author);
+                //     const p = document.createElement('p');
+                //     p.textContent = currentArtPiece.description;
+                //     art.appendChild(p);
+                //     const a = document.createElement('a');
+                //     a.href = currentArtPiece.wikipediaUrl;
+                //     a.textContent = `Wikipedia article: ` + currentArtPiece.title;
+                //     console.log(a)
+                //     art.appendChild(a);
+                //     artWork.appendChild(btn3);
+                //     artWork.appendChild(btn1);
+                //     artWork.appendChild(btn2);
+                //     getAllCommentsForArtWorkById(currentArtworkId);
+                //     document.querySelector("#artDescription").childNodes.remove;
+                //     //let likes = document.querySelector('#likeCounts');
+                //     if( allArtworks[index].likes==undefined) {
+                //         likes.textContent=0
+                //     } else {
+                //     likes.textContent=allArtworks[index].likes
+                // }
+                // }
             })
     })
 
@@ -225,7 +271,9 @@ document.addEventListener("DOMContentLoaded", () => {
         .then(res=>res.json())
         .then(data=>{console.log(data);
             //document.querySelector("#likeCount").innerText=data.likes; 
-            likes.innerText=data.likes; 
+            //likes.innerText=data.likes; 
+            allArtworks[curIndex] = data;
+            updateDisplay(curIndex)
         })        
     }        
     )
