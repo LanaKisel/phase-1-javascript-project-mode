@@ -1,14 +1,15 @@
 let currentArtworkId = undefined;
 let allArtworks = [];
-let btn1 = document.getElementById("btn1");
-let btn2 = document.getElementById('btn2');
-let btn3 = document.getElementById("btn3");
+let btn1 = undefined; // previous artework buuton created in \ updatedeisplay
+let btn2 = undefined;
+let btn3 = undefined;
+
 function updateDisplay(index) {
     let likes = document.querySelector('#likeCount');
     const art = document.querySelector("#artDescription");
-    currentArtworkId = allArtworks[index].id;
+    let currentArtPiece = allArtworks[index];
+    currentArtworkId = currentArtPiece.id;
     document.querySelector("#artDescription").innerHTML = ""
-    let currentArtPiece = allArtworks[index]
     document.querySelector('#galleryItem').src = currentArtPiece.imageUrl;
     const artWork = document.querySelector("#artWork");
     //creating description of art wokrs
@@ -37,6 +38,7 @@ function updateDisplay(index) {
         likes.textContent = allArtworks[index].likes
     }
 }
+
 function addsComment(name, comment) {
     const feedback = document.createElement('p');
     feedback.textContent = comment;
@@ -46,6 +48,7 @@ function addsComment(name, comment) {
     document.querySelector(".nameHolder").appendChild(feedbackName);
     document.querySelector("#feedback").reset();
 }
+
 function getAllCommentsForArtWorkById(artworkId) {
     document.querySelector(".holdFeedback").innerHTML = "";
     document.querySelector(".nameHolder").innerHTML = "";
@@ -76,7 +79,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const art = document.querySelector("#artDescription");
     //mouseover event on description of artwork
     art.addEventListener('mouseover', (event) => {
-        console.log('mouseover event')
         event.target.style.color = "orange"
         setTimeout(() => {
             event.target.style.color = "";
@@ -107,12 +109,11 @@ document.addEventListener("DOMContentLoaded", () => {
         })
             .then(res => res.json())
             .then(data => {
-                likes.innerHTML = currentArtworkId.likes
-                getAllCommentsForArtWorkById(currentArtworkId);
+                 getAllCommentsForArtWorkById(currentArtworkId);
             })
     })
-    let curIndex = 0;
 
+    let curIndex = undefined;
     const beginButton = document.querySelector("#begin").addEventListener('click', () => {
         curIndex = 0;
         fetch('http://localhost:3000/artWork', {
@@ -186,6 +187,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 btn1.textContent = "Exit gallery"
                 document.querySelector("#gallery-header").classList.add("hidden");
                 document.querySelector("#page_wrapper").classList.remove("hidden");
+                
                 updateDisplay(curIndex);
                 indexUpdated(data.length);
             })
@@ -193,19 +195,21 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const indexUpdated = function (galleryItems) {
 
-        //console.log("Index Value: ", curIndex);
+        //the ONLY gallery item
         if (curIndex <= 0 && galleryItems == 1) {
+            btn3.classList.add('hidden')            
+        } 
+        //on the first gallery item
+        else if (curIndex <= 0) {
             btn3.classList.add('hidden')
-            console.log("I'm on the ONLY gallery item!");
-        } else if (curIndex <= 0) {
+        } 
+        // on the last gallery item!
+        else if (curIndex == galleryItems - 1) {
             btn3.classList.add('hidden')
-            console.log("I'm on the first gallery item!");
-        } else if (curIndex == galleryItems - 1) {
-            btn3.classList.add('hidden')
-            console.log("I'm on the last gallery item!");
-        } else {
+        }
+        //somewhere in-between gallery items
+        else {
             btn3.classList.remove('hidden')
-            console.log("I'm somewhere in-between gallery items!");
         }
     }
 
