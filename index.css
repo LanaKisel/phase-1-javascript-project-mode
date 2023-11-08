@@ -131,3 +131,7 @@ input {
     background: none;
     border-radius: 1000px;
 }
+#likeCount {
+    color:rgb(153, 115, 121);
+    padding: 10 px;
+}

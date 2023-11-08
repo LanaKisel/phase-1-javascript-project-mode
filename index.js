@@ -1,22 +1,17 @@
 let currentArtworkId = undefined;
 let allArtworks = [];
+let btn1 = document.getElementById("btn1");
+let btn2 = document.getElementById('btn2');
+let btn3 = document.getElementById("btn3");
 function updateDisplay(index) {
     let likes = document.querySelector('#likeCount');
-    const art = document.querySelector("#artDescription"); 
-    let btn1 = document.getElementById("btn1");
-    let btn2 = document.getElementById('btn2');
-    let btn3 = document.getElementById("btn3");
-    console.log("data", allArtworks);
-    console.log("index", index);
-    console.log(allArtworks[index].id);
-    console.log("thes are likes: ", allArtworks[index].likes)
-
+    const art = document.querySelector("#artDescription");
     currentArtworkId = allArtworks[index].id;
     document.querySelector("#artDescription").innerHTML = ""
     let currentArtPiece = allArtworks[index]
     document.querySelector('#galleryItem').src = currentArtPiece.imageUrl;
     const artWork = document.querySelector("#artWork");
-    console.log(artWork);
+    //creating description of art wokrs
     let h3 = document.createElement('h1');
     h3.textContent = currentArtPiece.title
     let author = document.createElement('h4');
@@ -31,10 +26,11 @@ function updateDisplay(index) {
     a.textContent = `Wikipedia article: ` + currentArtPiece.title;
     console.log(a)
     art.appendChild(a);
-   
+
     getAllCommentsForArtWorkById(currentArtworkId);
+    //clears artwork description: 
     document.querySelector("#artDescription").childNodes.remove;
-    //let likes = document.querySelector('#likeCounts');
+
     if (allArtworks[index].likes == undefined) {
         likes.textContent = 0
     } else {
@@ -53,6 +49,7 @@ function addsComment(name, comment) {
 function getAllCommentsForArtWorkById(artworkId) {
     document.querySelector(".holdFeedback").innerHTML = "";
     document.querySelector(".nameHolder").innerHTML = "";
+    //fetch that gets comments from input
     fetch('http://localhost:3000/comments', {
         method: "GET",
         headers: {
@@ -61,14 +58,14 @@ function getAllCommentsForArtWorkById(artworkId) {
     })
         .then(res => res.json())
         .then(data => {
-
+            //filters comments for specific artwork 
             let filteredComments = data.filter((comments) => {
                 return comments.artworkId === artworkId
             })
-            filteredComments = filteredComments.splice(-5)
-
+            //displays only last 5 comments
+            filteredComments = filteredComments.splice(-5);
+            //adds name and comment 
             for (element of filteredComments) {
-
                 addsComment(element.name, element.comment)
             }
         })
@@ -77,6 +74,7 @@ function getAllCommentsForArtWorkById(artworkId) {
 document.addEventListener("DOMContentLoaded", () => {
     let likes = document.querySelector('#likeCount');
     const art = document.querySelector("#artDescription");
+    //mouseover event on description of artwork
     art.addEventListener('mouseover', (event) => {
         console.log('mouseover event')
         event.target.style.color = "orange"
@@ -90,10 +88,11 @@ document.addEventListener("DOMContentLoaded", () => {
         event.preventDefault();
         let name = document.querySelector(".text").value;
         let comment = document.querySelector(".input-text").value;
-        console.log("name length", name.length);
+        //if no name entered, default to "anonymous"
         if (name.length == 0) {
             name = "anonymous"
         };
+        
         fetch('http://localhost:3000/comments', {
             method: "POST",
             headers: {
@@ -103,19 +102,19 @@ document.addEventListener("DOMContentLoaded", () => {
             body: JSON.stringify({
                 "artworkId": currentArtworkId,
                 "name": name,
-                "comment": comment                
+                "comment": comment
             })
         })
             .then(res => res.json())
             .then(data => {
-                likes.innerHTML=data[index].likes
+                likes.innerHTML = currentArtworkId.likes
                 getAllCommentsForArtWorkById(currentArtworkId);
             })
     })
     let curIndex = 0;
+
     const beginButton = document.querySelector("#begin").addEventListener('click', () => {
         curIndex = 0;
-
         fetch('http://localhost:3000/artWork', {
             method: "GET",
             headers: {
@@ -125,17 +124,12 @@ document.addEventListener("DOMContentLoaded", () => {
             .then(res => res.json())
             .then(data => {
                 allArtworks = data;
-                let btn1 = document.getElementById("btn1");
-                let btn2 = document.getElementById('btn2');
-                let btn3 = document.getElementById("btn3");
-                console.log(curIndex);
 
                 if (!btn1) {
                     btn1 = document.createElement('button');
                     btn1.textContent = "<< Previous gallery item";
                     btn1.id = "btn1";
                     btn1.addEventListener("click", function (e) {
-                        console.log(curIndex)
                         curIndex--;
                         indexUpdated(data.length)
                         if (curIndex < 0) {
@@ -148,6 +142,7 @@ document.addEventListener("DOMContentLoaded", () => {
                             btn2.textContent = "Next gallery item >>";
                             updateDisplay(curIndex);
                         }
+                        //updateDisplay(curIndex);
                     });
                 }
                 if (!btn2) {
@@ -157,7 +152,6 @@ document.addEventListener("DOMContentLoaded", () => {
                     btn2.addEventListener('click', function (e) {
                         curIndex++;
                         indexUpdated(data.length);
-
                         if (curIndex > data.length - 1) {
                             document.querySelector("#gallery-header").classList.remove("hidden");
                             document.querySelector("#page_wrapper").classList.add("hidden");
@@ -179,7 +173,6 @@ document.addEventListener("DOMContentLoaded", () => {
                         document.querySelector("#gallery-header").classList.remove("hidden");
                         document.querySelector("#page_wrapper").classList.add("hidden");
                         updateDisplay(curIndex);
-
                     })
 
                 }
@@ -195,50 +188,12 @@ document.addEventListener("DOMContentLoaded", () => {
                 document.querySelector("#page_wrapper").classList.remove("hidden");
                 updateDisplay(curIndex);
                 indexUpdated(data.length);
-                // function updateDisplay(index) {
-                //     console.log("data", allArtworks);
-                //     console.log("index", index);
-                //     console.log(allArtworks[index].id);
-                //     console.log("thes are likes: ", allArtworks[index].likes)
-
-                //     currentArtworkId = allArtworks[index].id;
-                //     document.querySelector("#artDescription").innerHTML = ""
-                //     let currentArtPiece = allArtworks[index]
-                //     document.querySelector('#galleryItem').src = currentArtPiece.imageUrl;
-                //     const artWork = document.querySelector("#artWork");
-                //     console.log(artWork);
-                //     let h3 = document.createElement('h1');
-                //     h3.textContent = currentArtPiece.title
-                //     let author = document.createElement('h4');
-                //     author.textContent = currentArtPiece.author
-                //     art.appendChild(h3);
-                //     art.appendChild(author);
-                //     const p = document.createElement('p');
-                //     p.textContent = currentArtPiece.description;
-                //     art.appendChild(p);
-                //     const a = document.createElement('a');
-                //     a.href = currentArtPiece.wikipediaUrl;
-                //     a.textContent = `Wikipedia article: ` + currentArtPiece.title;
-                //     console.log(a)
-                //     art.appendChild(a);
-                //     artWork.appendChild(btn3);
-                //     artWork.appendChild(btn1);
-                //     artWork.appendChild(btn2);
-                //     getAllCommentsForArtWorkById(currentArtworkId);
-                //     document.querySelector("#artDescription").childNodes.remove;
-                //     //let likes = document.querySelector('#likeCounts');
-                //     if( allArtworks[index].likes==undefined) {
-                //         likes.textContent=0
-                //     } else {
-                //     likes.textContent=allArtworks[index].likes
-                // }
-                // }
             })
     })
 
     const indexUpdated = function (galleryItems) {
 
-        console.log("Index Value: ", curIndex);
+        //console.log("Index Value: ", curIndex);
         if (curIndex <= 0 && galleryItems == 1) {
             btn3.classList.add('hidden')
             console.log("I'm on the ONLY gallery item!");
@@ -255,9 +210,10 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     let likeButton = document.querySelector('#like');
-    likeButton.addEventListener("click", function(){
+    likeButton.addEventListener("click", function () {
+        //converting string to a number
         let numberOfLikesRightNow = Number(likes.textContent);
-        numberOfLikesRightNow++        
+        numberOfLikesRightNow++
         fetch(`http://localhost:3000/artWork/${currentArtworkId}`, {
             method: "PATCH",
             headers: {
@@ -265,16 +221,14 @@ document.addEventListener("DOMContentLoaded", () => {
                 "Accept": "application/json"
             },
             body: JSON.stringify({
-                "likes": numberOfLikesRightNow                
+                "likes": numberOfLikesRightNow
             })
         })
-        .then(res=>res.json())
-        .then(data=>{console.log(data);
-            //document.querySelector("#likeCount").innerText=data.likes; 
-            //likes.innerText=data.likes; 
-            allArtworks[curIndex] = data;
-            updateDisplay(curIndex)
-        })        
-    }        
+            .then(res => res.json())
+            .then(data => {
+                allArtworks[curIndex] = data;
+                updateDisplay(curIndex)
+            })
+    }
     )
 })
