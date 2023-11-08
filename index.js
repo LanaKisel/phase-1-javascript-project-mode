@@ -25,7 +25,6 @@ function updateDisplay(index) {
     const a = document.createElement('a');
     a.href = currentArtPiece.wikipediaUrl;
     a.textContent = `Wikipedia article: ` + currentArtPiece.title;
-    console.log(a)
     art.appendChild(a);
 
     getAllCommentsForArtWorkById(currentArtworkId);
@@ -94,7 +93,7 @@ document.addEventListener("DOMContentLoaded", () => {
         if (name.length == 0) {
             name = "anonymous"
         };
-        
+
         fetch('http://localhost:3000/comments', {
             method: "POST",
             headers: {
@@ -109,7 +108,7 @@ document.addEventListener("DOMContentLoaded", () => {
         })
             .then(res => res.json())
             .then(data => {
-                 getAllCommentsForArtWorkById(currentArtworkId);
+                getAllCommentsForArtWorkById(currentArtworkId);
             })
     })
 
@@ -187,7 +186,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 btn1.textContent = "Exit gallery"
                 document.querySelector("#gallery-header").classList.add("hidden");
                 document.querySelector("#page_wrapper").classList.remove("hidden");
-                
+
                 updateDisplay(curIndex);
                 indexUpdated(data.length);
             })
@@ -197,12 +196,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
         //the ONLY gallery item
         if (curIndex <= 0 && galleryItems == 1) {
-            btn3.classList.add('hidden')            
-        } 
+            btn3.classList.add('hidden')
+        }
         //on the first gallery item
         else if (curIndex <= 0) {
             btn3.classList.add('hidden')
-        } 
+        }
         // on the last gallery item!
         else if (curIndex == galleryItems - 1) {
             btn3.classList.add('hidden')

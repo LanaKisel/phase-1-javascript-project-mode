@@ -6,8 +6,7 @@
       "author": "Leonardo da Vinci",
       "description": "The Mona Lisa considered an archetypal masterpiece of the Italian Renaissance.The painting has been traditionally considered to depict the Italian noblewoman Lisa del Giocondo. It is painted in oil on a white Lombardy poplar panel. The Mona Lisa is one of the most valuable paintings in the world. It holds the Guinness World Record for the highest known painting insurance valuation in history at US$100 million in 1962, equivalent to $1 billion as of 2023.",
       "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Mona_Lisa%2C_by_Leonardo_da_Vinci%2C_from_C2RMF_retouched.jpg/405px-Mona_Lisa%2C_by_Leonardo_da_Vinci%2C_from_C2RMF_retouched.jpg",
-      "wikipediaUrl": "https://en.wikipedia.org/wiki/Mona_Lisa",
-      "likes": 36
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/Mona_Lisa"
     },
     {
       "id": 2,
@@ -15,17 +14,14 @@
       "author": "Pieter Bruegel the Elder",
       "description": "The narrative of the tower of Babel is an etiology or explanation of a phenomenon. The story of the Tower of Babel explains the origins of the multiplicity of languages. God was concerned that humans had blasphemed by building the tower to avoid a second flood so God brought into existence multiple languages. Thus, humans were divided into linguistic groups, unable to understand one another.",
       "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Pieter_Bruegel_the_Elder_-_The_Tower_of_Babel_%28Vienna%29_-_Google_Art_Project_-_edited.jpg/1280px-Pieter_Bruegel_the_Elder_-_The_Tower_of_Babel_%28Vienna%29_-_Google_Art_Project_-_edited.jpg",
-      "wikipediaUrl": "https://en.wikipedia.org/wiki/Tower_of_Babel",
-      "likes": 6
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/Tower_of_Babel"
     },
     {
       "id": 3,
       "title": "The Storm on the Sea of Galilee",
       "author": "Rembrandt van Rijn",
       "description": "Christ in the Storm on the Sea of Galilee is a 1633 oil-on-canvas painting by the Dutch Golden Age painter Rembrandt van Rijn. It is classified as a historical painting and is among the largest and earliest of Rembrandt's works. The painting, in vertical format, shows a close-up view of Christ's disciples struggling frantically against the heavy storm to regain control of their fishing boat. A huge wave beats the bow and rips the sail. One of the disciples is seen vomiting over the side. Another one, looking directly at the viewer, is a self-portrait of the artist. Only Christ, depicted on the right, remains calm.",
-      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Rembrandt_Christ_in_the_Storm_on_the_Lake_of_Galilee.jpg/800px-Rembrandt_Christ_in_the_Storm_on_the_Lake_of_Galilee.jpg",
-      "wikipediaUrl": "https://en.wikipedia.org/wiki/The_Storm_on_the_Sea_of_Galilee",
-      "likes": 1
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Rembrandt_Christ_in_the_Storm_on_the_Lake_of_Galilee.jpg/800px-Rembrandt_Christ_in_the_Storm_on_the_Lake_of_Galilee.jpg"
     },
     {
       "id": 4,
@@ -76,7 +72,5 @@
       "wikipediaUrl": "https://en.wikipedia.org/wiki/Caf%C3%A9_Terrace_at_Night"
     }
   ],
-  "comments": [
-
-  ]
+  "comments": []
 }
